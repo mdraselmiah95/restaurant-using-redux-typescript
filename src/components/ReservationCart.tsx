@@ -28,7 +28,7 @@ export default function ReservationCart({ name, index }: ReservationCartTypes) {
         }}
         style={{ padding: "3px 6px", margin: "0 10px" }}
       >
-        Add Cart
+        Add
       </button>
     </div>
   );
