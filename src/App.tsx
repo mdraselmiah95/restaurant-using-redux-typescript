@@ -4,15 +4,20 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import "./App.css";
 import { RootState } from "./app/store";
+import CustomerCard from "./components/CustomerCard";
 import ReservationCart from "./components/ReservationCart";
 import { addReservation } from "./features/reservationSlice";
 
 function App() {
   const [reservationNameInput, setReservationNameInput] = useState("");
+
   const MySwal = withReactContent(Swal);
+
   const reservations = useSelector(
     (state: RootState) => state.reservations.value
   );
+
+  const customers = useSelector((state: RootState) => state.customer.value);
 
   const dispatch = useDispatch();
 
@@ -48,16 +53,9 @@ function App() {
           </div>
         </div>
         <div className="customer-food-container">
-          <div className="customer-food-card-container">
-            <p>Selena Gomez</p>
-            <div className="customer-foods-container">
-              <div className="customer-food"></div>
-              <div className="customer-food-input-container">
-                <input />
-                <button>Add</button>
-              </div>
-            </div>
-          </div>
+          {customers.map((customer) => {
+            return <CustomerCard />;
+          })}
         </div>
       </div>
     </div>
