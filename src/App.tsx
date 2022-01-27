@@ -8,9 +8,7 @@ function App() {
         <div className="reservation-container">
           <div>
             <h5 className="reservation-header">Reservations</h5>
-            <div className="reservation-cards-container">
-              <div className="reservation-card-container">Laith Harb</div>
-            </div>
+            <div className="reservation-cards-container"></div>
           </div>
           <div className="reservation-input-container">
             <input />
