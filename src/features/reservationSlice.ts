@@ -9,3 +9,5 @@ export const reservationsSlice = createSlice({
   initialState,
   reducers: {},
 });
+
+export default reservationsSlice.reducer;
