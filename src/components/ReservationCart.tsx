@@ -11,11 +11,14 @@ export default function ReservationCart({ name, index }: ReservationCartTypes) {
   const dispatch = useDispatch();
 
   return (
-    <div
-      onClick={() => dispatch(removeReservation(index))}
-      className="reservation-card-container"
-    >
+    <div className="reservation-card-container">
       {name}
+      <button
+        onClick={() => dispatch(removeReservation(index))}
+        style={{ padding: "3px 6px", margin: "0 10px" }}
+      >
+        Add Cart
+      </button>
     </div>
   );
 }
