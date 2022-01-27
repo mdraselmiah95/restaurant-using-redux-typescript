@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import "./App.css";
 import { RootState } from "./app/store";
 import ReservationCart from "./components/ReservationCart";
@@ -7,7 +9,7 @@ import { addReservation } from "./features/reservationSlice";
 
 function App() {
   const [reservationNameInput, setReservationNameInput] = useState("");
-
+  const MySwal = withReactContent(Swal);
   const reservations = useSelector(
     (state: RootState) => state.reservations.value
   );
@@ -18,6 +20,11 @@ function App() {
     if (!reservationNameInput) return;
     dispatch(addReservation(reservationNameInput));
     setReservationNameInput("");
+    MySwal.fire({
+      title: "Thank you",
+      text: "Thank you for Reservation 💚",
+      icon: "success",
+    });
   };
 
   return (
