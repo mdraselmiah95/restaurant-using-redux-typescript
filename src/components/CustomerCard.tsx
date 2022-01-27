@@ -38,7 +38,7 @@ export default function CustomerCard({ id, name, food }: CustomerCardType) {
               setCustomerFoodInput("");
             }}
           >
-            Add
+            Add Food
           </button>
         </div>
       </div>
