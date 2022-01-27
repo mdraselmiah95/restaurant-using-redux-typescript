@@ -5,7 +5,7 @@ interface ReservationsState {
 }
 
 const initialState: ReservationsState = {
-  value: ["Rasel"],
+  value: ["Cool"],
 };
 
 export const reservationsSlice = createSlice({
